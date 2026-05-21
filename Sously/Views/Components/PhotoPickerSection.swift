@@ -14,8 +14,14 @@ struct PhotoPickerSection: View {
                     .frame(maxHeight: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }
-            PhotosPicker(selection: $pickerItem, matching: .images) {
-                Label(photoData == nil ? "Add Photo" : "Change Photo", systemImage: "photo")
+            if photoData == nil {
+                PhotosPicker(selection: $pickerItem, matching: .images) {
+                    Label("Add Photo", systemImage: "photo")
+                }
+            } else {
+                PhotosPicker(selection: $pickerItem, matching: .images) {
+                    Label("Change Photo", systemImage: "photo")
+                }
             }
             if photoData != nil {
                 Button("Remove Photo", role: .destructive) {
