@@ -39,6 +39,7 @@ struct ShoppingListsView: View {
                         }
                         .onDelete(perform: deleteLists)
                     }
+                    .pantryListStyle()
                 }
             }
             .navigationTitle("Shopping")

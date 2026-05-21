@@ -31,6 +31,7 @@ struct MealPlansView: View {
                         }
                         .onDelete(perform: deletePlans)
                     }
+                    .pantryListStyle()
                 }
             }
             .navigationTitle("Meal Plans")
@@ -147,6 +148,7 @@ struct MealPlanDetailView: View {
                 }
             }
         }
+        .pantryListStyle()
         .navigationTitle(plan.safeName)
     }
 

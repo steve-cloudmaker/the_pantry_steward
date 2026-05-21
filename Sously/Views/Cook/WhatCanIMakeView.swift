@@ -77,6 +77,7 @@ struct WhatCanIMakeView: View {
                     }
                 }
             }
+            .pantryListStyle()
             .navigationTitle("Cook")
             .onAppear(perform: reload)
             .onChange(of: sort) { _, _ in reload() }

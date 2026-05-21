@@ -28,6 +28,7 @@ struct PantryListView: View {
                         }
                         .onDelete(perform: deleteItems)
                     }
+                    .pantryListStyle()
                 }
             }
             .navigationTitle("Pantry")

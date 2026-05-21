@@ -36,6 +36,7 @@ struct ShoppingListDetailView: View {
                 .onDelete(perform: deleteItems)
             }
         }
+        .pantryListStyle()
         .navigationTitle(list.safeName)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

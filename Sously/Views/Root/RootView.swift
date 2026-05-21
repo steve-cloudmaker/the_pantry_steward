@@ -5,24 +5,27 @@ struct RootView: View {
     @State private var selectedTab: AppTab? = .pantry
 
     var body: some View {
-        if horizontalSizeClass == .regular {
-            NavigationSplitView {
-                SidebarView(selection: $selectedTab)
-            } detail: {
-                tabDetail
-            }
-        } else {
-            TabView(selection: Binding(
-                get: { selectedTab ?? .pantry },
-                set: { selectedTab = $0 }
-            )) {
-                ForEach(AppTab.allCases) { tab in
-                    tabContent(tab)
-                        .tabItem { Label(tab.title, systemImage: tab.systemImage) }
-                        .tag(tab)
+        Group {
+            if horizontalSizeClass == .regular {
+                NavigationSplitView {
+                    SidebarView(selection: $selectedTab)
+                } detail: {
+                    tabDetail
+                }
+            } else {
+                TabView(selection: Binding(
+                    get: { selectedTab ?? .pantry },
+                    set: { selectedTab = $0 }
+                )) {
+                    ForEach(AppTab.allCases) { tab in
+                        tabContent(tab)
+                            .tabItem { Label(tab.title, systemImage: tab.systemImage) }
+                            .tag(tab)
+                    }
                 }
             }
         }
+        .pantryBackground()
     }
 
     @ViewBuilder

@@ -13,6 +13,7 @@
 		117E3333817D8E9B3326167C /* ShoppingListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F60899E42F60DA2999033D8 /* ShoppingListBuilderTests.swift */; };
 		12C7132DD3382D4E3A17E3A5 /* IngredientNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118D2EDFC382944A3D321845 /* IngredientNormalizer.swift */; };
 		12CE9B45669D014D9A2A45C3 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21974E42098F328FF8E03953 /* RecipeListView.swift */; };
+		20CC57241682D4970E82DA0B /* AppLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89091CC49260194C1E57DA73 /* AppLaunchView.swift */; };
 		29FE2ADDCCEDD752170F9354 /* QuantityFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C21504033F9A49FD73C2F45 /* QuantityFormatter.swift */; };
 		2AC942E0507749D25566790E /* MealPlanGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077221042781AE2168F2106 /* MealPlanGeneratorTests.swift */; };
 		31F2D9C739D5DEED590451B6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEE2B5C5647BB26CB25535 /* Enums.swift */; };
@@ -34,8 +35,10 @@
 		78D89F32741416A5C82E50AD /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CE15F2E8F6E5FF75A867B8 /* RootView.swift */; };
 		7BEF02C7D26666BB1731124D /* ShoppingListBuilderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6330DF1B25FB290059F912 /* ShoppingListBuilderService.swift */; };
 		94647B6A80EE2B88F80A40C1 /* PantryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7B44A8EC4A8B7B0A1EC4B /* PantryRepository.swift */; };
+		9DA33C30AE8787B98CFC2E2A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFBD4DCCFA237273CACC9E5 /* SplashView.swift */; };
 		A2C15DB11707462223CDB3D2 /* PhotoPickerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4EEB933C92AFDF396D151 /* PhotoPickerSection.swift */; };
 		ADA0C724FA6DF8ED79FA6E9E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B13FEA1EF59D2A69F1088 /* AppState.swift */; };
+		AEDFAED0AF0E80DC1BBC99D7 /* PantryBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B15B534868BB07A27BA1B /* PantryBackgroundView.swift */; };
 		B353952049000248B2C9838B /* RecipeImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E8BE73A050845F85F2ED6 /* RecipeImportView.swift */; };
 		B8AFCA16F8E8971A061B160C /* SouslyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409AEBBCD4B8FAE47E447A01 /* SouslyUITests.swift */; };
 		BBFEF05CF6903DC3A6D8745B /* Sously.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB5BC9B5ED747E27C064A41C /* Sously.xcdatamodeld */; };
@@ -91,6 +94,7 @@
 		4EA4EEB933C92AFDF396D151 /* PhotoPickerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerSection.swift; sourceTree = "<group>"; };
 		55BB4CA1A9847ECB107C3761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60FC57E849EF847DC8D235CD /* Sously.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sously.entitlements; sourceTree = "<group>"; };
+		655B15B534868BB07A27BA1B /* PantryBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryBackgroundView.swift; sourceTree = "<group>"; };
 		69CE15F2E8F6E5FF75A867B8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		6C21504033F9A49FD73C2F45 /* QuantityFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityFormatter.swift; sourceTree = "<group>"; };
 		7077221042781AE2168F2106 /* MealPlanGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanGeneratorTests.swift; sourceTree = "<group>"; };
@@ -101,11 +105,12 @@
 		7BA7B44A8EC4A8B7B0A1EC4B /* PantryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryRepository.swift; sourceTree = "<group>"; };
 		84FEE2B5C5647BB26CB25535 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		88F20F618E759F997CA06A40 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		89091CC49260194C1E57DA73 /* AppLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchView.swift; sourceTree = "<group>"; };
 		8C762548F89C7DB7BAE95E96 /* SouslyUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SouslyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F60899E42F60DA2999033D8 /* ShoppingListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListBuilderTests.swift; sourceTree = "<group>"; };
 		A95B13FEA1EF59D2A69F1088 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B9E18FAD8CF821234EA9BA57 /* PantryItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItemDetailView.swift; sourceTree = "<group>"; };
-		BB3E4664108202B4C45F84A2 /* Sously.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sously.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3E4664108202B4C45F84A2 /* Sously.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Sously.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6330DF1B25FB290059F912 /* ShoppingListBuilderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListBuilderService.swift; sourceTree = "<group>"; };
 		C6D8EA6DA7519B16F00C2654 /* MealPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlansView.swift; sourceTree = "<group>"; };
 		C855AA007A60E43D69C873D9 /* MealPlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanRepository.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 		D0BC9B94188662FA3CFD05A5 /* RecipeImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImportService.swift; sourceTree = "<group>"; };
 		D8427CD31D0C6539C8809E14 /* SeedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataService.swift; sourceTree = "<group>"; };
 		DA20DE8010E7C2363FD79494 /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
+		DDFBD4DCCFA237273CACC9E5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E20CE5B71636D885A50D50D5 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		F8BFD34D0DCB9FC72A2FDC82 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		F938E842C25F6B65AB637600 /* ShoppingListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListsView.swift; sourceTree = "<group>"; };
@@ -150,7 +156,9 @@
 		1D90CAD2AA4A2CE22B352282 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				89091CC49260194C1E57DA73 /* AppLaunchView.swift */,
 				69CE15F2E8F6E5FF75A867B8 /* RootView.swift */,
+				DDFBD4DCCFA237273CACC9E5 /* SplashView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				23448DE7D36630B95FDBC2A5 /* BarcodeScannerView.swift */,
+				655B15B534868BB07A27BA1B /* PantryBackgroundView.swift */,
 				4EA4EEB933C92AFDF396D151 /* PhotoPickerSection.swift */,
 				02DD61C9FF7050CDA9EA4E3C /* StatusBadge.swift */,
 			);
@@ -414,6 +423,7 @@
 						ProvisioningStyle = Automatic;
 					};
 					9866704C9756CCBD83AE9312 = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -455,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CC57241682D4970E82DA0B /* AppLaunchView.swift in Sources */,
 				ADA0C724FA6DF8ED79FA6E9E /* AppState.swift in Sources */,
 				D98A1CA7AC3849C04B269193 /* BarcodeLookupService.swift in Sources */,
 				418056613903E8E656664943 /* BarcodeScannerView.swift in Sources */,
@@ -467,6 +478,7 @@
 				466BA0A0DD8F44A956FC98C1 /* MealPlanGeneratorService.swift in Sources */,
 				0DF8558A43F97CBE806DEA22 /* MealPlanRepository.swift in Sources */,
 				F5CE5717D295224493068CD9 /* MealPlansView.swift in Sources */,
+				AEDFAED0AF0E80DC1BBC99D7 /* PantryBackgroundView.swift in Sources */,
 				F738D4F772C22365DF8FAB1C /* PantryItemDetailView.swift in Sources */,
 				58878EB0FCADFCA3461FC62B /* PantryItemEditorView.swift in Sources */,
 				E122F76D3DD33F22D49C87FC /* PantryListView.swift in Sources */,
@@ -489,6 +501,7 @@
 				66F46BB71E0B19B9D4524310 /* ShoppingRepository.swift in Sources */,
 				BBFEF05CF6903DC3A6D8745B /* Sously.xcdatamodeld in Sources */,
 				D550A2F39DB32B926B517DB6 /* SouslyApp.swift in Sources */,
+				9DA33C30AE8787B98CFC2E2A /* SplashView.swift in Sources */,
 				3BF6AEA0DD3693C0823BD46A /* StatusBadge.swift in Sources */,
 				0B164E759648C68ACA07F021 /* TagRepository.swift in Sources */,
 				4F42AF52ACF80F04F72802F1 /* WhatCanIMakeView.swift in Sources */,
@@ -643,7 +656,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sously/Resources/Sously.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J7MM7A8SK8;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Sously/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -745,7 +757,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sously/Resources/Sously.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J7MM7A8SK8;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Sously/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

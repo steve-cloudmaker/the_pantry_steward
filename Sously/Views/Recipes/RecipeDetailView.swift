@@ -62,6 +62,7 @@ struct RecipeDetailView: View {
                 }
             }
         }
+        .pantryListStyle()
         .navigationTitle(recipe.safeName)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

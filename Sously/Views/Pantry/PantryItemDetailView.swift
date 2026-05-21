@@ -47,6 +47,7 @@ struct PantryItemDetailView: View {
                 Section("Notes") { Text(notes) }
             }
         }
+        .pantryListStyle()
         .navigationTitle(item.safeName)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
