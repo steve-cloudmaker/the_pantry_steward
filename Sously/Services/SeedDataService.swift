@@ -3,10 +3,44 @@ import Foundation
 
 enum SeedDataService {
     private static let seedKey = "com.sously.didSeed"
+    private static var isSeeding = false
+
+    /// Stable IDs so CloudKit merges sample rows across devices instead of duplicating them.
+    private enum SeedID {
+        static let categoryProduce = UUID(uuidString: "A1000001-0000-4000-8000-000000000001")!
+        static let categoryDairy = UUID(uuidString: "A1000001-0000-4000-8000-000000000002")!
+        static let categoryPantry = UUID(uuidString: "A1000001-0000-4000-8000-000000000003")!
+        static let subLeafyGreens = UUID(uuidString: "A1000001-0000-4000-8000-000000000011")!
+        static let subCheese = UUID(uuidString: "A1000001-0000-4000-8000-000000000012")!
+        static let tagWeeknight = UUID(uuidString: "A1000001-0000-4000-8000-000000000021")!
+        static let tagVegetarian = UUID(uuidString: "A1000001-0000-4000-8000-000000000022")!
+        static let tagKids = UUID(uuidString: "A1000001-0000-4000-8000-000000000023")!
+        static let itemEggs = UUID(uuidString: "A1000002-0000-4000-8000-000000000001")!
+        static let itemSpinach = UUID(uuidString: "A1000002-0000-4000-8000-000000000002")!
+        static let itemPasta = UUID(uuidString: "A1000002-0000-4000-8000-000000000003")!
+        static let itemOliveOil = UUID(uuidString: "A1000002-0000-4000-8000-000000000004")!
+        static let itemGarlic = UUID(uuidString: "A1000002-0000-4000-8000-000000000005")!
+        static let recipePasta = UUID(uuidString: "A1000003-0000-4000-8000-000000000001")!
+        static let recipeEggs = UUID(uuidString: "A1000003-0000-4000-8000-000000000002")!
+        static let listWeekly = UUID(uuidString: "A1000004-0000-4000-8000-000000000001")!
+    }
 
     @MainActor
     static func seedIfNeeded(context: NSManagedObjectContext) {
-        guard !UserDefaults.standard.bool(forKey: seedKey) else { return }
+        guard !isSeeding else { return }
+
+        if UserDefaults.standard.bool(forKey: seedKey) {
+            return
+        }
+
+        if hasExistingSampleData(in: context) {
+            markSeeded()
+            return
+        }
+
+        isSeeding = true
+        defer { isSeeding = false }
+
         let pantry = PantryRepository(context: context)
         let recipes = RecipeRepository(context: context)
         let categories = CategoryRepository(context: context)
@@ -14,17 +48,38 @@ enum SeedDataService {
         let shopping = ShoppingRepository(context: context)
 
         do {
-            let produce = try categories.create(name: "Produce", sortOrder: 0)
-            let dairy = try categories.create(name: "Dairy", sortOrder: 1)
-            let pantryCat = try categories.create(name: "Pantry", sortOrder: 2)
-            _ = try categories.createSubCategory(name: "Leafy Greens", in: produce)
-            _ = try categories.createSubCategory(name: "Cheese", in: dairy)
+            let produce = try categories.create(
+                id: SeedID.categoryProduce,
+                name: "Produce",
+                sortOrder: 0
+            )
+            let dairy = try categories.create(
+                id: SeedID.categoryDairy,
+                name: "Dairy",
+                sortOrder: 1
+            )
+            let pantryCat = try categories.create(
+                id: SeedID.categoryPantry,
+                name: "Pantry",
+                sortOrder: 2
+            )
+            _ = try categories.createSubCategory(
+                id: SeedID.subLeafyGreens,
+                name: "Leafy Greens",
+                in: produce
+            )
+            _ = try categories.createSubCategory(
+                id: SeedID.subCheese,
+                name: "Cheese",
+                in: dairy
+            )
 
-            let weeknight = try tags.findOrCreate(name: "weeknight")
-            let vegetarian = try tags.findOrCreate(name: "vegetarian")
-            let kids = try tags.findOrCreate(name: "kids")
+            let weeknight = try tags.findOrCreate(id: SeedID.tagWeeknight, name: "weeknight")
+            let vegetarian = try tags.findOrCreate(id: SeedID.tagVegetarian, name: "vegetarian")
+            let kids = try tags.findOrCreate(id: SeedID.tagKids, name: "kids")
 
             _ = try pantry.create(
+                id: SeedID.itemEggs,
                 name: "Eggs",
                 quantity: 10,
                 unit: "each",
@@ -36,6 +91,7 @@ enum SeedDataService {
                 tags: [weeknight, kids]
             )
             _ = try pantry.create(
+                id: SeedID.itemSpinach,
                 name: "Spinach",
                 quantity: 1,
                 unit: "bag",
@@ -46,6 +102,7 @@ enum SeedDataService {
                 tags: [vegetarian]
             )
             _ = try pantry.create(
+                id: SeedID.itemPasta,
                 name: "Pasta",
                 quantity: 2,
                 unit: "box",
@@ -54,6 +111,7 @@ enum SeedDataService {
                 tags: [weeknight, kids]
             )
             _ = try pantry.create(
+                id: SeedID.itemOliveOil,
                 name: "Olive Oil",
                 quantity: 1,
                 unit: "bottle",
@@ -61,6 +119,7 @@ enum SeedDataService {
                 category: pantryCat
             )
             _ = try pantry.create(
+                id: SeedID.itemGarlic,
                 name: "Garlic",
                 quantity: 5,
                 unit: "clove",
@@ -69,6 +128,7 @@ enum SeedDataService {
             )
 
             _ = try recipes.create(
+                id: SeedID.recipePasta,
                 name: "Garlic Spinach Pasta",
                 summary: "A fast weeknight pasta with pantry staples.",
                 servings: 4,
@@ -92,6 +152,7 @@ enum SeedDataService {
             )
 
             _ = try recipes.create(
+                id: SeedID.recipeEggs,
                 name: "Simple Scrambled Eggs",
                 summary: "Soft scrambled eggs for breakfast or dinner.",
                 servings: 2,
@@ -110,18 +171,37 @@ enum SeedDataService {
                 tags: [weeknight, kids]
             )
 
-            let list = try shopping.createList(name: "Weekly Groceries")
+            let list = try shopping.createList(id: SeedID.listWeekly, name: "Weekly Groceries")
             _ = try shopping.addItem(to: list, name: "Milk", quantity: 1, unit: "gallon", price: 4.29)
             _ = try shopping.addItem(to: list, name: "Bananas", quantity: 6, unit: "each", price: 1.99)
 
-            UserDefaults.standard.set(true, forKey: seedKey)
+            markSeeded()
         } catch {
+            context.rollback()
             assertionFailure("Seed failed: \(error)")
         }
+    }
+
+    @MainActor
+    private static func hasExistingSampleData(in context: NSManagedObjectContext) -> Bool {
+        let pantryRequest = PantryItem.fetchRequest()
+        pantryRequest.fetchLimit = 1
+        let pantryCount = (try? context.count(for: pantryRequest)) ?? 0
+        if pantryCount > 0 { return true }
+
+        let recipeRequest = Recipe.fetchRequest()
+        recipeRequest.fetchLimit = 1
+        let recipeCount = (try? context.count(for: recipeRequest)) ?? 0
+        return recipeCount > 0
+    }
+
+    private static func markSeeded() {
+        UserDefaults.standard.set(true, forKey: seedKey)
     }
 
     /// Resets seed flag for tests.
     static func resetSeedFlag() {
         UserDefaults.standard.removeObject(forKey: seedKey)
+        isSeeding = false
     }
 }

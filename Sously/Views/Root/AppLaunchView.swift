@@ -21,6 +21,9 @@ struct AppLaunchView: View {
                 .zIndex(1)
             }
         }
+        .onAppear {
+            SeedCoordinator.scheduleSeedIfNeeded(persistence: appState.persistence)
+        }
     }
 }
 

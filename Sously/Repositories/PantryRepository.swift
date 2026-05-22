@@ -87,6 +87,7 @@ final class PantryRepository {
 
     @discardableResult
     func create(
+        id: UUID? = nil,
         name: String,
         quantity: Double = 1,
         unit: String = "each",
@@ -105,8 +106,11 @@ final class PantryRepository {
         subCategory: SubCategory? = nil,
         tags: [Tag] = []
     ) throws -> PantryItem {
+        if let id, let existing = try fetch(byID: id) {
+            return existing
+        }
         let item = PantryItem(context: context)
-        item.id = UUID()
+        item.id = id ?? UUID()
         item.name = name
         item.quantity = quantity
         item.unit = unit

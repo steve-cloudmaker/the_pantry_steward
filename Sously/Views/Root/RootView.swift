@@ -3,18 +3,23 @@ import SwiftUI
 struct RootView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var selectedTab: AppTab? = .pantry
+    @State private var columnVisibility: NavigationSplitViewVisibility = .automatic
 
     var body: some View {
         Group {
             if horizontalSizeClass == .regular {
-                NavigationSplitView {
+                NavigationSplitView(columnVisibility: $columnVisibility) {
                     SidebarView(selection: $selectedTab)
+                        .navigationSplitViewColumnWidth(min: 240, ideal: 280, max: 320)
                 } detail: {
                     tabDetail
+                        .id(selectedTab)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background {
+                            PantryBackgroundView()
+                        }
                 }
-                .background {
-                    PantryBackgroundView()
-                }
+                .navigationSplitViewStyle(.balanced)
             } else {
                 TabView(selection: Binding(
                     get: { selectedTab ?? .pantry },
@@ -96,6 +101,9 @@ struct SidebarView: View {
         .pantryListStyle()
         .pantryNavigationBackdrop()
         .navigationTitle("Sously")
+        .background {
+            PantryBackgroundView()
+        }
     }
 }
 

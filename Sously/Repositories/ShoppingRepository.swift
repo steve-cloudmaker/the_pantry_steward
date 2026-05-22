@@ -25,9 +25,12 @@ final class ShoppingRepository {
     }
 
     @discardableResult
-    func createList(name: String, isShared: Bool = false) throws -> ShoppingList {
+    func createList(id: UUID? = nil, name: String, isShared: Bool = false) throws -> ShoppingList {
+        if let id, let existing = try fetchList(id: id) {
+            return existing
+        }
         let list = ShoppingList(context: context)
-        list.id = UUID()
+        list.id = id ?? UUID()
         list.name = name
         list.isShared = isShared
         let now = Date()

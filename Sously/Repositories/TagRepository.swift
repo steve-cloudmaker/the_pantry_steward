@@ -15,8 +15,16 @@ final class TagRepository {
         return try context.fetch(request)
     }
 
-    func findOrCreate(name raw: String) throws -> Tag {
+    func findOrCreate(id: UUID? = nil, name raw: String) throws -> Tag {
         let name = Tag.normalizedName(raw)
+        if let id {
+            let idRequest = Tag.fetchRequest()
+            idRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            idRequest.fetchLimit = 1
+            if let existing = try context.fetch(idRequest).first {
+                return existing
+            }
+        }
         let request = Tag.fetchRequest()
         request.predicate = NSPredicate(format: "name == %@", name)
         request.fetchLimit = 1
@@ -24,7 +32,7 @@ final class TagRepository {
             return existing
         }
         let tag = Tag(context: context)
-        tag.id = UUID()
+        tag.id = id ?? UUID()
         tag.name = name
         try context.save()
         return tag

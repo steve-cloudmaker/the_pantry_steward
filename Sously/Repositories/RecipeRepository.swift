@@ -47,6 +47,7 @@ final class RecipeRepository {
 
     @discardableResult
     func create(
+        id: UUID? = nil,
         name: String,
         summary: String? = nil,
         servings: Int16 = 4,
@@ -60,8 +61,11 @@ final class RecipeRepository {
         steps: [String] = [],
         tags: [Tag] = []
     ) throws -> Recipe {
+        if let id, let existing = try fetch(id: id) {
+            return existing
+        }
         let recipe = Recipe(context: context)
-        recipe.id = UUID()
+        recipe.id = id ?? UUID()
         recipe.name = name
         recipe.summary = summary
         recipe.servings = servings

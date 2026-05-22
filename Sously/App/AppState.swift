@@ -30,6 +30,5 @@ final class AppState: ObservableObject {
 
     init(persistence: PersistenceController = .shared) {
         self.persistence = persistence
-        SeedDataService.seedIfNeeded(context: persistence.viewContext)
     }
 }

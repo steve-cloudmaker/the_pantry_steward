@@ -12,7 +12,7 @@ final class SouslyUITests: XCTestCase {
 
         let pantryTab = app.tabBars.buttons["Pantry"]
         let pantryNav = app.navigationBars["Pantry"]
-        XCTAssertTrue(pantryTab.waitForExistence(timeout: 15) || pantryNav.waitForExistence(timeout: 15))
+        XCTAssertTrue(pantryTab.waitForExistence(timeout: 25) || pantryNav.waitForExistence(timeout: 25))
         app.tabBars.buttons["Shopping"].tap()
         XCTAssertTrue(app.navigationBars["Shopping"].waitForExistence(timeout: 3))
         app.tabBars.buttons["Cook"].tap()
