@@ -17,6 +17,7 @@ struct PantryListView: View {
                         systemImage: "refrigerator",
                         description: Text("Add ingredients by photo, barcode, or manual entry.")
                     )
+                    .background(Color.clear)
                 } else {
                     List {
                         ForEach(items, id: \.objectID) { item in
@@ -31,6 +32,7 @@ struct PantryListView: View {
                     .pantryListStyle()
                 }
             }
+            .pantryNavigationBackdrop()
             .navigationTitle("Pantry")
             .searchable(text: $criteria.query, prompt: "Item, category, or #tag")
             .toolbar {

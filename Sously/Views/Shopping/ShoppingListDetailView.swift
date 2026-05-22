@@ -37,6 +37,7 @@ struct ShoppingListDetailView: View {
             }
         }
         .pantryListStyle()
+        .pantryNavigationBackdrop()
         .navigationTitle(list.safeName)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

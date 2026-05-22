@@ -31,6 +31,7 @@ struct RecipeListView: View {
                     .pantryListStyle()
                 }
             }
+            .pantryNavigationBackdrop()
             .navigationTitle("Recipes")
             .searchable(text: $query, prompt: "Search recipes")
             .toolbar {

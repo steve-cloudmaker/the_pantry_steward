@@ -42,6 +42,7 @@ struct ShoppingListsView: View {
                     .pantryListStyle()
                 }
             }
+            .pantryNavigationBackdrop()
             .navigationTitle("Shopping")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {

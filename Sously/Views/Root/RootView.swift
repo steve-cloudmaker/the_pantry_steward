@@ -12,6 +12,9 @@ struct RootView: View {
                 } detail: {
                     tabDetail
                 }
+                .background {
+                    PantryBackgroundView()
+                }
             } else {
                 TabView(selection: Binding(
                     get: { selectedTab ?? .pantry },
@@ -23,9 +26,11 @@ struct RootView: View {
                             .tag(tab)
                     }
                 }
+                .background {
+                    PantryBackgroundView()
+                }
             }
         }
-        .pantryBackground()
     }
 
     @ViewBuilder
@@ -34,6 +39,7 @@ struct RootView: View {
             tabContent(selectedTab)
         } else {
             ContentUnavailableView("Select a section", systemImage: "square.grid.2x2")
+                .pantryNavigationBackdrop()
         }
     }
 
@@ -87,6 +93,8 @@ struct SidebarView: View {
             Label(tab.title, systemImage: tab.systemImage)
                 .tag(tab)
         }
+        .pantryListStyle()
+        .pantryNavigationBackdrop()
         .navigationTitle("Sously")
     }
 }

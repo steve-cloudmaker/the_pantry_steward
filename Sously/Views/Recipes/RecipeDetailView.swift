@@ -63,6 +63,7 @@ struct RecipeDetailView: View {
             }
         }
         .pantryListStyle()
+        .pantryNavigationBackdrop()
         .navigationTitle(recipe.safeName)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

@@ -34,6 +34,7 @@ struct MealPlansView: View {
                     .pantryListStyle()
                 }
             }
+            .pantryNavigationBackdrop()
             .navigationTitle("Meal Plans")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -149,6 +150,7 @@ struct MealPlanDetailView: View {
             }
         }
         .pantryListStyle()
+        .pantryNavigationBackdrop()
         .navigationTitle(plan.safeName)
     }
 
