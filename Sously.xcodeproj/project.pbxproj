@@ -56,6 +56,7 @@
 		F5CE5717D295224493068CD9 /* MealPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D8EA6DA7519B16F00C2654 /* MealPlansView.swift */; };
 		F738D4F772C22365DF8FAB1C /* PantryItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E18FAD8CF821234EA9BA57 /* PantryItemDetailView.swift */; };
 		F87FE6D51A1B80AF644AF242 /* ShoppingListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938E842C25F6B65AB637600 /* ShoppingListsView.swift */; };
+		FF1F30529EC5A77DFC4C1C8E /* BarcodeLookupServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE26B71B1215BEB943C0F68C /* BarcodeLookupServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		D8427CD31D0C6539C8809E14 /* SeedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDataService.swift; sourceTree = "<group>"; };
 		DA20DE8010E7C2363FD79494 /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
 		DDFBD4DCCFA237273CACC9E5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		DE26B71B1215BEB943C0F68C /* BarcodeLookupServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeLookupServiceTests.swift; sourceTree = "<group>"; };
 		E20CE5B71636D885A50D50D5 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		F8BFD34D0DCB9FC72A2FDC82 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		F938E842C25F6B65AB637600 /* ShoppingListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListsView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		500F119989BA91E558AACA08 /* SouslyTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE26B71B1215BEB943C0F68C /* BarcodeLookupServiceTests.swift */,
 				01A752D500C68EE65E8A1A3F /* IngredientNormalizerTests.swift */,
 				7077221042781AE2168F2106 /* MealPlanGeneratorTests.swift */,
 				73B0622D7C2F318C37E39D75 /* RecipeImportParserTests.swift */,
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1F30529EC5A77DFC4C1C8E /* BarcodeLookupServiceTests.swift in Sources */,
 				52934FDD57BB34893522DC67 /* IngredientNormalizerTests.swift in Sources */,
 				2AC942E0507749D25566790E /* MealPlanGeneratorTests.swift in Sources */,
 				67EFB86A9B1B3EB5A7AD2072 /* RecipeImportParserTests.swift in Sources */,

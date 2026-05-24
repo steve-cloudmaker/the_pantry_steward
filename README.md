@@ -8,7 +8,7 @@ Sously is a household pantry inventory and recipe suggestion app for **iPhone**,
 
 ### Pantry inventory
 - Add items manually, via **photo**, or **barcode scan**
-- Open Food Facts lookup for barcode products
+- Barcode lookup via free APIs (Open Food Facts, UPCitemdb, Open Library for books)
 - Track quantity, unit, size, brand, storage location, expiration / best-before
 - Categories, sub-categories, tags (`#weeknight`), priority, favorites
 - Search by name, brand, notes, category, or tag
@@ -58,7 +58,7 @@ open Sously.xcodeproj
 xcodebuild -scheme Sously -destination 'platform=iOS Simulator,name=iPhone 16' test
 ```
 
-Unit tests cover ingredient normalization, recipe matching, import parsers, shopping list gaps, and meal plan generation. UI tests verify tab navigation.
+Unit tests cover ingredient normalization, recipe matching, import parsers, shopping list gaps, meal plan generation, and barcode lookup fallback. UI tests verify tab navigation.
 
 ## Architecture
 

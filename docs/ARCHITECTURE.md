@@ -55,7 +55,7 @@ Parses remote HTML:
 When a meal is marked **eaten**, deducts scaled required ingredients from matching pantry rows.
 
 ### `BarcodeLookupService`
-Open Food Facts API v2 (no API key).
+Multi-provider fallback (no API key): Open Food Facts (`product_type=all` across food/beauty/pet/general products), [UPCitemdb](https://www.upcitemdb.com/) trial API (100 lookups/day), then [Open Library](https://openlibrary.org/developers/api) for ISBN barcodes. Sends a `User-Agent` on all requests; tries UPC-A/EAN-13 variants when needed.
 
 ## Multi-platform UI
 
