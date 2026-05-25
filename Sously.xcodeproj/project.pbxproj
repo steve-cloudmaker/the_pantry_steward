@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0966CEA0DCF8FDB19129330F /* RecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7641543CE982EB3B6CBCF479 /* RecipeRepository.swift */; };
 		0B164E759648C68ACA07F021 /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20DE8010E7C2363FD79494 /* TagRepository.swift */; };
+		0BFE1CB4FB13C9DEA3C3B9B4 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D91439EB0BAA866837DFB0 /* CameraPicker.swift */; };
 		0DF8558A43F97CBE806DEA22 /* MealPlanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855AA007A60E43D69C873D9 /* MealPlanRepository.swift */; };
 		0E49424D88AC170582BBACAA /* SeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E023718054A6B5ECD9C5950 /* SeedCoordinator.swift */; };
 		117E3333817D8E9B3326167C /* ShoppingListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F60899E42F60DA2999033D8 /* ShoppingListBuilderTests.swift */; };
@@ -113,9 +114,10 @@
 		8C762548F89C7DB7BAE95E96 /* SouslyUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SouslyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E023718054A6B5ECD9C5950 /* SeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedCoordinator.swift; sourceTree = "<group>"; };
 		8F60899E42F60DA2999033D8 /* ShoppingListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListBuilderTests.swift; sourceTree = "<group>"; };
+		A2D91439EB0BAA866837DFB0 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		A95B13FEA1EF59D2A69F1088 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B9E18FAD8CF821234EA9BA57 /* PantryItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryItemDetailView.swift; sourceTree = "<group>"; };
-		BB3E4664108202B4C45F84A2 /* Sously.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sously.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3E4664108202B4C45F84A2 /* Sously.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Sously.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6330DF1B25FB290059F912 /* ShoppingListBuilderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListBuilderService.swift; sourceTree = "<group>"; };
 		C6D8EA6DA7519B16F00C2654 /* MealPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlansView.swift; sourceTree = "<group>"; };
 		C855AA007A60E43D69C873D9 /* MealPlanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanRepository.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				23448DE7D36630B95FDBC2A5 /* BarcodeScannerView.swift */,
+				A2D91439EB0BAA866837DFB0 /* CameraPicker.swift */,
 				655B15B534868BB07A27BA1B /* PantryBackgroundView.swift */,
 				4EA4EEB933C92AFDF396D151 /* PhotoPickerSection.swift */,
 				02DD61C9FF7050CDA9EA4E3C /* StatusBadge.swift */,
@@ -432,6 +435,7 @@
 						ProvisioningStyle = Automatic;
 					};
 					9866704C9756CCBD83AE9312 = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -477,6 +481,7 @@
 				ADA0C724FA6DF8ED79FA6E9E /* AppState.swift in Sources */,
 				D98A1CA7AC3849C04B269193 /* BarcodeLookupService.swift in Sources */,
 				418056613903E8E656664943 /* BarcodeScannerView.swift in Sources */,
+				0BFE1CB4FB13C9DEA3C3B9B4 /* CameraPicker.swift in Sources */,
 				D656685C1A15BB742B3A4A1B /* CategoryRepository.swift in Sources */,
 				31F2D9C739D5DEED590451B6 /* Enums.swift in Sources */,
 				3E950C6313C472CB5E537698 /* Extensions.swift in Sources */,
@@ -667,7 +672,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sously/Resources/Sously.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J7MM7A8SK8;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Sously/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -769,7 +773,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sously/Resources/Sously.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = J7MM7A8SK8;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Sously/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
