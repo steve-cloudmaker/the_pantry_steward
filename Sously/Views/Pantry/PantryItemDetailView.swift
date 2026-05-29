@@ -3,6 +3,7 @@ import SwiftUI
 struct PantryItemDetailView: View {
     @EnvironmentObject private var appState: AppState
     @ObservedObject var item: PantryItem
+    var onUpdate: (() -> Void)?
     @State private var showingEdit = false
 
     var body: some View {
@@ -68,12 +69,13 @@ struct PantryItemDetailView: View {
             }
         }
         .sheet(isPresented: $showingEdit) {
-            PantryItemEditorView(mode: .edit(item)) {}
+            PantryItemEditorView(mode: .edit(item)) { onUpdate?() }
         }
     }
 
     private func adjustQuantity(by delta: Double) {
-        try? appState.pantryRepository.adjustQuantity(item, by: delta)
+        guard (try? appState.pantryRepository.adjustQuantity(item, by: delta)) != nil else { return }
+        onUpdate?()
     }
 }
 

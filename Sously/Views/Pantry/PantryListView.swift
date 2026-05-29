@@ -22,7 +22,7 @@ struct PantryListView: View {
                     List {
                         ForEach(items, id: \.objectID) { item in
                             NavigationLink {
-                                PantryItemDetailView(item: item)
+                                PantryItemDetailView(item: item, onUpdate: reload)
                             } label: {
                                 PantryRowView(item: item)
                             }
@@ -95,7 +95,7 @@ struct PantryListView: View {
 }
 
 struct PantryRowView: View {
-    let item: PantryItem
+    @ObservedObject var item: PantryItem
 
     var body: some View {
         HStack(spacing: 12) {
